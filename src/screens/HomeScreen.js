@@ -1,11 +1,13 @@
 import { View, Text, StatusBar, ScrollView, Image, TextInput } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import tw from 'twrnc'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import {BellIcon, MagnifyingGlassIcon} from 'react-native-heroicons/outline'
 import Categories from '../components/categories';
 
 export default function HomeScreen() {
+
+    const {activeCategory, setActiveCategory} = useState('Plats')
     return (
         <View style={tw`flex-1 bg-white`}>
             <StatusBar style="dark" />
@@ -40,7 +42,7 @@ export default function HomeScreen() {
                     </View>
                 </View>
                 <View>
-                    <Categories />
+                    <Categories activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
                 </View>
             </ScrollView>
         </View>
