@@ -29,7 +29,7 @@ export default function HomeScreen() {
                     </Text>
                 </View>
 
-                <View style={tw`mx-4 flex-row items-center rounded-full bg-black/5 p-[6px]`}>
+                <View style={tw`mx-4 flex-row items-center rounded-full bg-black/5 p-[6px] mb-4`}>
                 <TextInput
                     placeholder='Rechercher une recette'
                     placeholderTextColor={'gray'}

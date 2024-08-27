@@ -1,14 +1,14 @@
 export const categoryData =[
     {
-        name: 'Fruits',
-        image: require('../../assets/images/')
+        name: 'Entrées',
+        image: require('../../assets/images/entrée.png')
     },
     {
-        name: 'Fruits',
-        image: require('../../assets/images/')
+        name: 'Plats',
+        image: require('../../assets/images/plat.png')
     },
     {
-        name: 'Fruits',
-        image: require('../../assets/images/')
+        name: 'Desserts',
+        image: require('../../assets/images/dessert.png')
     }
 ]
