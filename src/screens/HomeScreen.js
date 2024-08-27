@@ -1,13 +1,30 @@
 import { View, Text, StatusBar, ScrollView, Image, TextInput } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import tw from 'twrnc'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import {BellIcon, MagnifyingGlassIcon} from 'react-native-heroicons/outline'
 import Categories from '../components/categories';
-
+import axios from 'axios';
 export default function HomeScreen() {
 
-    const {activeCategory, setActiveCategory} = useState('Plats')
+    const [activeCategory, setActiveCategory] = useState('Plats');
+    const [categories, setCategories] = useState([]);
+
+    useEffect(()=>{
+        getCategories();
+    },[])
+
+    const getCategories = async ()=>{
+        try{
+            const response = await axios.get('https://www.themealdb.com/api/json/v1/1/categories.php');
+            console.log('got categories:', response.data);
+            if(response && response.data){
+
+            }
+        }catch(err){
+            console.log('errors:', err.message);
+        }
+    }
     return (
         <View style={tw`flex-1 bg-white`}>
             <StatusBar style="dark" />
