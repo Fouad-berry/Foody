@@ -1,4 +1,4 @@
-import { View, Text, StatusBar, ScrollView, Image } from 'react-native'
+import { View, Text, StatusBar, ScrollView, Image, TextInput } from 'react-native'
 import React from 'react'
 import tw from 'twrnc'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
@@ -18,8 +18,22 @@ export default function HomeScreen() {
                     <BellIcon size={hp(4)} color="gray" />
                 </View>
 
-                <View style={tw`mx-4 space-y-2 mb-2`}>
-                    <Text style={[tw`text-neutral-600`, { fontSize: hp(1.7)}]}>Bonjour, Fouad</Text>
+                <View style={tw`mx-4 mb-4`}>
+                    <Text style={[tw`text-neutral-600 mb-2`, { fontSize: hp(2.2)}]}>Bonjour, Fouad</Text>
+                    <View>
+                        <Text style={[tw`text-neutral-600 font-semibold`, { fontSize: hp(3)}]}>Preparez votre propre nourriture</Text>
+                    </View>
+                    <Text style={[tw`text-neutral-600 font-semibold`, { fontSize: hp(3)}]}>
+                        depuis chez <Text style={tw`text-amber-400`}>vous</Text>
+                    </Text>
+                </View>
+
+                <View style={tw`mx-4 flex-row items-center rounded-full bg-black/5 p-[6px]`}>
+                <TextInput
+                    placeholder='Rechercher une recette'
+                    placeholderTextColor={'gray'}
+                    style={[tw`flex-1 text-base mb-1 pl-3 tracking-wider`, { fontSize: hp(2)}]}                    
+                />
                 </View>
             </ScrollView>
         </View>
