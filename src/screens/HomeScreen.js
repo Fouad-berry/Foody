@@ -2,7 +2,8 @@ import { View, Text, StatusBar, ScrollView, Image, TextInput } from 'react-nativ
 import React from 'react'
 import tw from 'twrnc'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import {BellIcon} from 'react-native-heroicons/outline'
+import {BellIcon, MagnifyingGlassIcon} from 'react-native-heroicons/outline'
+import Categories from '../components/categories';
 
 export default function HomeScreen() {
     return (
@@ -34,6 +35,12 @@ export default function HomeScreen() {
                     placeholderTextColor={'gray'}
                     style={[tw`flex-1 text-base mb-1 pl-3 tracking-wider`, { fontSize: hp(2)}]}                    
                 />
+                    <View style={tw`bg-white rounded-full p-3`}>
+                        <MagnifyingGlassIcon size={hp(2.5)} strokeWidth={3} color="gray"/>
+                    </View>
+                </View>
+                <View>
+                    <Categories />
                 </View>
             </ScrollView>
         </View>
