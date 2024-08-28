@@ -1,14 +1,14 @@
 export const categoryData =[
     {
         name: 'Entrées',
-        image: require('../../assets/images/starter.png')
+        image: "https://www.themealdb.com/images/category/starter.png"
     },
     {
         name: 'Plats',
-        image: require('../../assets/images/beef.png')
+        image: "https://www.themealdb.com/images/category/beef.png"
     },
     {
         name: 'Desserts',
-        image: require('../../assets/images/dessert.png')
+        image: "https://www.themealdb.com/images/category/dessert.png"
     }
 ]

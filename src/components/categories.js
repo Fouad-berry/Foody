@@ -6,7 +6,7 @@ import tw from 'twrnc';
 import Animated, {FadeInDown} from 'react-native-reanimated';
 
 
-export default function Categories(activeCategory, setActiveCategory) {
+export default function Categories({categories, activeCategory, setActiveCategory}) {
   return (
     <Animated.View entering={FadeInDown.duration(500).springify()}>
         <ScrollView
@@ -16,7 +16,7 @@ export default function Categories(activeCategory, setActiveCategory) {
             contentContainerStyle={{paddingHorizontal: 15}}
         >
             {
-                categoryData.map((cat, index)=>{
+                categories.map((cat, index)=>{
                     let isActive = cat.name==activeCategory;
                     let activeButtonClass = isActive? tw`bg-amber-400`: tw`bg-black/10`;
                     return (
@@ -26,8 +26,8 @@ export default function Categories(activeCategory, setActiveCategory) {
                             style={[tw`flex items-center mb-2`, { marginRight: wp(4) }]}                        >
                             <View style={[tw`rounded-full p-[6px]`, activeButtonClass]}>
                                 <Image 
-                                    source={cat.image}
-                                    style={[tw`rounded-full`, { width: hp(8), height: hp(8)}]}
+                                    source={{uri: cat.strCategoryThumb}}
+                                    style={[tw`rounded-full`, { width: hp(6), height: hp(6)}]}
                                 />
                             </View>
                             <View>

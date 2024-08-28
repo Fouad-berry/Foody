@@ -5,6 +5,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import {BellIcon, MagnifyingGlassIcon} from 'react-native-heroicons/outline'
 import Categories from '../components/categories';
 import axios from 'axios';
+import Recipes from '../components/recipes';
 export default function HomeScreen() {
 
     const [activeCategory, setActiveCategory] = useState('Plats');
@@ -19,7 +20,7 @@ export default function HomeScreen() {
             const response = await axios.get('https://www.themealdb.com/api/json/v1/1/categories.php');
             console.log('got categories:', response.data);
             if(response && response.data){
-
+                setCategories(response.data.categories);
             }
         }catch(err){
             console.log('errors:', err.message);
@@ -59,7 +60,11 @@ export default function HomeScreen() {
                     </View>
                 </View>
                 <View>
-                    <Categories activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
+                    { categories.length>0 && <Categories categories={categories} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />}
+                </View>
+
+                <View>
+                    <Recipes />
                 </View>
             </ScrollView>
         </View>
