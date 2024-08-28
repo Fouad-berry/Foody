@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, Pressable, Image } from 'react-native'
 import React from 'react'
 import tw from 'twrnc'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
@@ -26,9 +26,17 @@ export default function Recipes() {
 }
 
 const RecipeCard = ({item, index})=>{
+    let isEven = index%2==0;
     return(
         <View>
-            <Text>Recipe</Text>
+            <Pressable
+                style={[tw`flex justify-center mb-4 space-y-1`, { width: '100%', paddingLeft: isEven? 0:8, paddingRight: isEven?8:0}]}
+            >
+                <Image
+                    source={{uri: item.image}}
+                    style={[tw`bg-black/5`, { width: '100%', height: hp(35), borderRadius: 35}]}
+                />
+            </Pressable>
         </View>
     )
 }

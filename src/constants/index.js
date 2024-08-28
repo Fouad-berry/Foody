@@ -15,10 +15,6 @@ export const categoryData =[
 
 export const mealData =[
     {
-        name: 'Shakshuka',
-        image: "https://www.themealdb.com/images/category/g373701551450225.png"
-    },
-    {
         name: 'bol de banh mi au bœuf avec mayonnaise à la sriracha',
         image: "https://www.themealdb.com/images/media/meals/z0ageb1583189517.jpg"
     },
