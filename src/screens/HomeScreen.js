@@ -17,6 +17,12 @@ export default function HomeScreen() {
         getRecipes();
     },[])
 
+    const handleChangeCategory = category=>{
+        getRecipes(category);
+        setActiveCategory(category);
+        setMeals([]);
+    }
+
     const getCategories = async ()=>{
         try{
             const response = await axios.get('https://www.themealdb.com/api/json/v1/1/categories.php');
@@ -75,7 +81,7 @@ export default function HomeScreen() {
                     </View>
                 </View>
                 <View>
-                    { categories.length>0 && <Categories categories={categories} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />}
+                    { categories.length>0 && <Categories categories={categories} activeCategory={activeCategory} handleChangeCategory={handleChangeCategory} />}
                 </View>
 
                 <View>

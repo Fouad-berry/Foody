@@ -17,12 +17,12 @@ export default function Categories({categories, activeCategory, setActiveCategor
         >
             {
                 categories.map((cat, index)=>{
-                    let isActive = cat.name==activeCategory;
+                    let isActive = cat.strCategory==activeCategory;
                     let activeButtonClass = isActive? tw`bg-amber-400`: tw`bg-black/10`;
                     return (
                         <TouchableOpacity
                             key={index}
-                            onPress={()=>setActiveCategory(cat.name)}
+                            onPress={()=>handleChangeCategory(cat.strCategory)}
                             style={[tw`flex items-center mb-2`, { marginRight: wp(4) }]}                        >
                             <View style={[tw`rounded-full p-[6px]`, activeButtonClass]}>
                                 <Image 
@@ -32,7 +32,7 @@ export default function Categories({categories, activeCategory, setActiveCategor
                             </View>
                             <View>
                                 <Text style={[tw`text-neutral-600`, { fontSize: hp(1.6)}]}                                >
-                                    {cat.name}
+                                    {cat.strCategory}
                                 </Text>
                             </View>
                         </TouchableOpacity>
