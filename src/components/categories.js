@@ -6,7 +6,7 @@ import tw from 'twrnc';
 import Animated, {FadeInDown} from 'react-native-reanimated';
 
 
-export default function Categories({categories, activeCategory, setActiveCategory}) {
+export default function Categories({categories, activeCategory, handleChangeCategory}) {
   return (
     <Animated.View entering={FadeInDown.duration(500).springify()}>
         <ScrollView

@@ -38,7 +38,7 @@ export default function HomeScreen() {
     const getRecipes = async (category="Beef")=>{
         try{
             const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`);
-            console.log('got recipes:', response.data);
+            //console.log('got recipes:', response.data);
             if(response && response.data){
                 setMeals(response.data.meals);
             }
