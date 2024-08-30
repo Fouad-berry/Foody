@@ -10,15 +10,17 @@ export default function HomeScreen() {
 
     const [activeCategory, setActiveCategory] = useState('Plats');
     const [categories, setCategories] = useState([]);
+    const [meals, setMeals] = useState([]);
 
     useEffect(()=>{
         getCategories();
+        getRecipes();
     },[])
 
     const getCategories = async ()=>{
         try{
             const response = await axios.get('https://www.themealdb.com/api/json/v1/1/categories.php');
-            console.log('got categories:', response.data);
+            //console.log('got categories:', response.data);
             if(response && response.data){
                 setCategories(response.data.categories);
             }
@@ -26,6 +28,19 @@ export default function HomeScreen() {
             console.log('errors:', err.message);
         }
     }
+
+    const getRecipes = async (category="Beef")=>{
+        try{
+            const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`);
+            console.log('got recipes:', response.data);
+            if(response && response.data){
+                setMeals(response.data.meals);
+            }
+        }catch(err){
+            console.log('errors:', err.message);
+        }
+    }
+
     return (
         <View style={tw`flex-1 bg-white`}>
             <StatusBar style="dark" />
@@ -64,7 +79,7 @@ export default function HomeScreen() {
                 </View>
 
                 <View>
-                    <Recipes categories={categories} />
+                    <Recipes meals={meals} categories={categories} />
                 </View>
             </ScrollView>
         </View>

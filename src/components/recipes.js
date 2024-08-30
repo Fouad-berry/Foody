@@ -7,7 +7,7 @@ import { mealData } from '../constants';
 import Animated, {FadeInDown} from 'react-native-reanimated';
 
 
-export default function Recipes({categories}) {
+export default function Recipes({categories, meals}) {
   return (
     <View style={tw`mb-3 mx-4`}>
         <Text style={[tw`font-semibold text-neutral-600`, { fontSize: hp(3)}]}>Recettes</Text>
