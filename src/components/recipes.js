@@ -34,8 +34,13 @@ const RecipeCard = ({item, index})=>{
             >
                 <Image
                     source={{uri: item.image}}
-                    style={[tw`bg-black/5`, { width: '100%', height: hp(35), borderRadius: 35}]}
+                    style={[tw`bg-black/5`, { width: '100%', height: index%3==0? hp (25): hp(35), borderRadius: 35}]}
                 />
+                <Text style={tw`font-semibold ml-2 text-neutral-600`}>
+                    {
+                        item.name.length>20? item.name.slice(0,20)+'...': item.name
+                    }
+                </Text >
             </Pressable>
         </View>
     )
