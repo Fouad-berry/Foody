@@ -5,6 +5,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import MasonryList from '@react-native-seoul/masonry-list';
 import { mealData } from '../constants';
 import Animated, {FadeInDown} from 'react-native-reanimated';
+import Loading from './loading';
 
 
 export default function Recipes({categories, meals}) {
@@ -13,7 +14,9 @@ export default function Recipes({categories, meals}) {
         <Text style={[tw`font-semibold text-neutral-600`, { fontSize: hp(3)}]}>Recettes</Text>
         <View >
             {
-                categories.length==0 || meals.length==0? null: (
+                categories.length==0 || meals.length==0?(
+                    <Loading size="Large" style={tw`mt-20`}/>
+                ): (
                     <MasonryList
                     data={meals}
                     keyExtractor={(item) => item.idMeal}
