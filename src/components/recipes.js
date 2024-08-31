@@ -6,6 +6,7 @@ import MasonryList from '@react-native-seoul/masonry-list';
 import { mealData } from '../constants';
 import Animated, {FadeInDown} from 'react-native-reanimated';
 import Loading from './loading';
+import { CachedImage } from '../helpers/image';
 
 
 export default function Recipes({categories, meals}) {
@@ -41,11 +42,16 @@ const RecipeCard = ({item, index})=>{
             <Pressable
                 style={[tw`flex justify-center mb-4 space-y-1`, { width: '100%', paddingLeft: isEven? 0:8, paddingRight: isEven?8:0}]}
             >
-                <Image
+{/*                 <Image
                     source={{uri: item.strMealThumb}}
                     style={[tw`bg-black/5`, { width: '100%', height: index%3==0? hp (25): hp(35), borderRadius: 35}]}
                 />
-                <Text style={[tw`font-semibold ml-2 text-neutral-600`, {fontSize: hp(1.5)}]}>
+ */}                
+                    <CachedImage
+                        uri= {item.strMealThumb}
+                        style={[tw`bg-black/5`, { width: '100%', height: index%3==0? hp (25): hp(35), borderRadius: 35}]}
+                    />
+                    <Text style={[tw`font-semibold ml-2 text-neutral-600`, {fontSize: hp(1.5)}]}>
                     {
                         item.strMeal.length>20? item.strMeal.slice(0,20)+'...': item.strMeal
                     }
