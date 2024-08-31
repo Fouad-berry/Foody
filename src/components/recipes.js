@@ -15,7 +15,7 @@ export default function Recipes({categories, meals}) {
         <View >
             {
                 categories.length==0 || meals.length==0?(
-                    <Loading size="Large" style={tw`mt-20`}/>
+                    <Loading size="Large" style={tw`mt-10`}/>
                 ): (
                     <MasonryList
                     data={meals}
