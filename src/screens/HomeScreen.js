@@ -53,7 +53,7 @@ export default function HomeScreen() {
             <ScrollView
                 showsHorizontalScrollIndicator={false}
                 contentContainerStyle={{paddingBottom: 50}}
-                style={tw`pt-8 mb-6`}
+                style={tw`mb-6`}
             >
                 <View style={tw`mx-4 flex-row justify-between items-center mb-4`}>
                     <Image source={require('../../assets/images/avatar.png')} style={{height: hp(5), width: hp(5.5)}}/>

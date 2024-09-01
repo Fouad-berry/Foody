@@ -1,8 +1,9 @@
-import { View, Text, ScrollView, StatusBar } from 'react-native'
+import { View, Text, ScrollView, StatusBar, TouchableOpacity } from 'react-native'
 import React from 'react'
 import tw from 'twrnc';
 import { CachedImage } from '../helpers/image';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { ChevronLeftIcon } from 'react-native-heroicons/outline';
 
 
 export default function RecipeDetailScreen(props) {
@@ -19,8 +20,14 @@ export default function RecipeDetailScreen(props) {
       <View style={tw`flex-row justify-center`}>
         <CachedImage
             uri={item.strMealThumb}
-            style={{width: wp(98), height: hp(50), borderRadius: 30, borderBottomLeftRadius: 30, borderBottomRightRadius: 30, marginTop: 4}}
+            style={{width: wp(98), height: hp(50), borderRadius: 30, borderBottomLeftRadius: 30, borderBottomRightRadius: 30}}
         />
+      </View>
+
+      <View style={tw`w-full absolute flex-row justify-between items-center`}>
+        <TouchableOpacity>
+          <ChevronLeftIcon size={hp(3.5)} strokeWidth={4.5} color="#fbbf24" />
+        </TouchableOpacity>
       </View>
     </ScrollView>
   )
