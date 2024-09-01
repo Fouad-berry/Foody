@@ -24,8 +24,8 @@ export default function RecipeDetailScreen(props) {
         />
       </View>
 
-      <View style={tw`w-full absolute flex-row justify-between items-center`}>
-        <TouchableOpacity>
+      <View style={tw`w-full absolute flex-row justify-between items-center pt-9`}>
+        <TouchableOpacity style={tw`p-2 rounded-full ml-5 bg-white`}>
           <ChevronLeftIcon size={hp(3.5)} strokeWidth={4.5} color="#fbbf24" />
         </TouchableOpacity>
       </View>
