@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import tw from 'twrnc';
 import { CachedImage } from '../helpers/image';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import { ChevronLeftIcon } from 'react-native-heroicons/outline';
+import { ChevronLeftIcon, ClockIcon, UsersIcon } from 'react-native-heroicons/outline';
 import {  HeartIcon } from 'react-native-heroicons/solid';
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
@@ -62,7 +62,7 @@ export default function RecipeDetailScreen(props) {
         loading? (
           <Loading size="large" style={tw`mt-16`} />
         ):(
-        <View style={tw`px-4 flex justify-between ml-4 pt-8`}>
+        <View style={tw`px-4 flex justify-between ml-2 pt-8`}>
           <View style={tw`ml-2`}>
             <Text style={[tw`font-bold flex-1 text-neutral-700 mb-2`, { fontSize: hp(3)}]}>
                 {meal?.strMeal}
@@ -74,7 +74,34 @@ export default function RecipeDetailScreen(props) {
 
           <View style={tw`flex-row justify-around`}>
             <View style={tw`flex rounded-full bg-amber-300 p-2`}>
-              
+              <View
+                style={[tw`bg-white rounded-full flex items-center justify-center`, { height: hp(6.5), width: hp(6.5)}]}
+              >
+                  <ClockIcon size={hp(4)} strokeWidth={2.5} color="#525252" />
+              </View>
+              <View style={tw`flex items-center py-2 ml-1`}>
+                  <Text style={[tw`font-bold text-neutral-700`, { fontSize: hp(2)}]}>
+                      35
+                  </Text>
+                  <Text style={[tw`font-bold text-neutral-700`, { fontSize: hp(1.3)}]}>
+                      Mins
+                  </Text>
+              </View>
+            </View>
+            <View style={tw`flex rounded-full bg-amber-300 p-2`}>
+              <View
+                style={[tw`bg-white rounded-full flex items-center justify-center`, { height: hp(6.5), width: hp(6.5)}]}
+              >
+                  <UsersIcon size={hp(4)} strokeWidth={2.5} color="#525252" />
+              </View>
+              <View style={tw`flex items-center py-2 ml-1`}>
+                  <Text style={[tw`font-bold text-neutral-700`, { fontSize: hp(2)}]}>
+                      03
+                  </Text>
+                  <Text style={[tw`font-bold text-neutral-700`, { fontSize: hp(1.3)}]}>
+                      Servings
+                  </Text>
+              </View>
             </View>
           </View>
           
