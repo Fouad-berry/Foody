@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import tw from 'twrnc';
 import { CachedImage } from '../helpers/image';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import { ChevronLeftIcon, ClockIcon, UsersIcon } from 'react-native-heroicons/outline';
+import { ChevronLeftIcon, ClockIcon, FireIcon, Square3Stack3DIcon, UsersIcon } from 'react-native-heroicons/outline';
 import {  HeartIcon } from 'react-native-heroicons/solid';
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
@@ -32,6 +32,18 @@ export default function RecipeDetailScreen(props) {
       }catch(err){
         console.log('errors:', err.message);
     }
+}
+
+const ingredientsIndexes = (meal)=>{
+  if(!meal) return [];
+  let indexes = [];
+  for(let i=1; i<=20; i++){
+    if(meal['strIngredient'+i]){
+      indexes.push(i);
+    }
+  }
+
+  return indexes;
 }
 
 
@@ -67,12 +79,12 @@ export default function RecipeDetailScreen(props) {
             <Text style={[tw`font-bold flex-1 text-neutral-700 mb-2`, { fontSize: hp(3)}]}>
                 {meal?.strMeal}
             </Text>
-            <Text style={[tw`font-medium flex-1 text-neutral-500`, { fontSize: hp(2)}]}>
+            <Text style={[tw`font-medium flex-1 text-neutral-500 mb-2`, { fontSize: hp(2)}]}>
                 {meal?.strArea}
             </Text>
           </View>
 
-          <View style={tw`flex-row justify-around`}>
+          <View style={tw`flex-row justify-around mb-2`}>
             <View style={tw`flex rounded-full bg-amber-300 p-2`}>
               <View
                 style={[tw`bg-white rounded-full flex items-center justify-center`, { height: hp(6.5), width: hp(6.5)}]}
@@ -99,12 +111,61 @@ export default function RecipeDetailScreen(props) {
                       03
                   </Text>
                   <Text style={[tw`font-bold text-neutral-700`, { fontSize: hp(1.3)}]}>
-                      Servings
+                      portions
+                  </Text>
+              </View>
+            </View>
+            <View style={tw`flex rounded-full bg-amber-300 p-2`}>
+              <View
+                style={[tw`bg-white rounded-full flex items-center justify-center`, { height: hp(6.5), width: hp(6.5)}]}
+              >
+                  <FireIcon size={hp(4)} strokeWidth={2.5} color="#525252" />
+              </View>
+              <View style={tw`flex items-center py-2 ml-1`}>
+                  <Text style={[tw`font-bold text-neutral-700`, { fontSize: hp(2)}]}>
+                      103
+                  </Text>
+                  <Text style={[tw`font-bold text-neutral-700`, { fontSize: hp(1.3)}]}>
+                      Calorie
+                  </Text>
+              </View>
+            </View>
+            <View style={tw`flex rounded-full bg-amber-300 p-2`}>
+              <View
+                style={[tw`bg-white rounded-full flex items-center justify-center`, { height: hp(6.5), width: hp(6.5)}]}
+              >
+                  <Square3Stack3DIcon size={hp(4)} strokeWidth={2.5} color="#525252" />
+              </View>
+              <View style={tw`flex items-center py-2 ml-1`}>
+                  <Text style={[tw`font-bold text-neutral-700`, { fontSize: hp(2)}]}>
+                      103
+                  </Text>
+                  <Text style={[tw`font-bold text-neutral-700`, { fontSize: hp(1.3)}]}>
+                      Facile
                   </Text>
               </View>
             </View>
           </View>
           
+          <View style={tw`ml-4`}>
+              <Text style={[tw`font-bold flex-1 text-neutral-700 mb-1`, { fontSize: hp(2.5)}]}>
+                  Ingredients
+              </Text>
+          </View>
+          <View style={tw`ml-2 ml-3`}>
+              {
+                ingredientsIndexes(meal).map(i=>{
+                  return (
+                    <View key={i} style={tw`flex-row pt-2`}>
+                        <View style={[tw`bg-amber-300 rounded-full`, { height: hp(1.5), width: hp(1.5)}]}>
+
+                        </View>
+                    </View>
+                  )
+                })
+              }
+          </View>
+
         </View>
 
           
