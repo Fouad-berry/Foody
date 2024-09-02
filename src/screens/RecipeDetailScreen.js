@@ -157,8 +157,9 @@ const ingredientsIndexes = (meal)=>{
                 ingredientsIndexes(meal).map(i=>{
                   return (
                     <View key={i} style={tw`flex-row pt-2`}>
-                        <View style={[tw`bg-amber-300 rounded-full`, { height: hp(1.5), width: hp(1.5)}]}>
-
+                        <View style={[tw`bg-amber-300 rounded-full`, { height: hp(1.5), width: hp(1.5)}]} />
+                        <View style={tw`flex-row ml-4`}>
+                            <Text>{meal['strMeasure'+i]}</Text>
                         </View>
                     </View>
                   )
