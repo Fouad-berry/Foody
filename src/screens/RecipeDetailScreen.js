@@ -14,6 +14,7 @@ export default function RecipeDetailScreen(props) {
   let item = props.route.params;
   const [isFavourite, setIsFavourite] = useState(false)
   const navigation = useNavigation();
+  const [meal, setMeal] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(()=>{
@@ -61,9 +62,25 @@ export default function RecipeDetailScreen(props) {
         loading? (
           <Loading size="large" style={tw`mt-16`} />
         ):(
-          <View>
-            <Text>display meal data</Text>
+        <View style={tw`px-4 flex justify-between ml-4 pt-8`}>
+          <View style={tw`ml-2`}>
+            <Text style={[tw`font-bold flex-1 text-neutral-700 mb-2`, { fontSize: hp(3)}]}>
+                {meal?.strMeal}
+            </Text>
+            <Text style={[tw`font-medium flex-1 text-neutral-500`, { fontSize: hp(2)}]}>
+                {meal?.strArea}
+            </Text>
           </View>
+
+          <View style={tw`flex-row justify-around`}>
+            <View style={tw`flex rounded-full bg-amber-300 p-2`}>
+              
+            </View>
+          </View>
+          
+        </View>
+
+          
         )
       }
     </ScrollView>
