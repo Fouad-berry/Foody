@@ -138,7 +138,7 @@ const ingredientsIndexes = (meal)=>{
               </View>
               <View style={tw`flex items-center py-2 ml-1`}>
                   <Text style={[tw`font-bold text-neutral-700`, { fontSize: hp(2)}]}>
-                      103
+                      
                   </Text>
                   <Text style={[tw`font-bold text-neutral-700`, { fontSize: hp(1.3)}]}>
                       Facile
