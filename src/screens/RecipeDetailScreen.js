@@ -8,6 +8,7 @@ import {  HeartIcon } from 'react-native-heroicons/solid';
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import Loading from '../components/loading';
+import YoutubeIframe from 'react-native-youtube-iframe';
 
 
 export default function RecipeDetailScreen(props) {
@@ -44,6 +45,15 @@ const ingredientsIndexes = (meal)=>{
   }
 
   return indexes;
+}
+
+const getYoutubevideoId = url=>{
+  const regex = /[?&]v=([^&]+)/;
+  const match = url.match(regex);
+  if (match && match[1]) {
+    return match[1];
+  }
+  return null;
 }
 
 
@@ -185,6 +195,12 @@ const ingredientsIndexes = (meal)=>{
                     <Text style={[tw`font-bold flex-1 text-neutral-700 mb-1`, { fontSize: hp(2.5)}]}>
                       Video de la recette
                     </Text>
+                    <View>
+                        <YoutubeIframe
+                            videoId={getYoutubevideoId(meal.strYoutube)}
+                            height={hp(30)}
+                        />
+                    </View>
                 </View>
               )
           }
