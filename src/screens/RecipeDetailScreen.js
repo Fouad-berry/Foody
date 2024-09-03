@@ -137,7 +137,7 @@ const ingredientsIndexes = (meal)=>{
                   <Square3Stack3DIcon size={hp(4)} strokeWidth={2.5} color="#525252" />
               </View>
               <View style={tw`flex items-center py-2 ml-1`}>
-                  <Text style={[tw`font-bold text-neutral-700`, { fontSize: hp(2)}]}>
+                  <Text style={[tw`font-bold text-neutral-700 mb-5`, { fontSize: hp(2)}]}>
                       
                   </Text>
                   <Text style={[tw`font-bold text-neutral-700`, { fontSize: hp(1.3)}]}>
