@@ -147,11 +147,10 @@ const ingredientsIndexes = (meal)=>{
             </View>
           </View>
           
-          <View style={tw`ml-4`}>
+          <View style={tw`ml-1`}>
               <Text style={[tw`font-bold flex-1 text-neutral-700 mb-1`, { fontSize: hp(2.5)}]}>
                   Ingredients
               </Text>
-          </View>
           <View style={tw`ml-2 ml-3`}>
               {
                 ingredientsIndexes(meal).map(i=>{
@@ -168,8 +167,15 @@ const ingredientsIndexes = (meal)=>{
               }
           </View>
 
+        <View style={tw`ml-4`}>
+              <Text style={[tw`font-bold flex-1 text-neutral-700 mb-1`, { fontSize: hp(2.5)}]}>
+                  Instructions
+              </Text>
+          </View>
         </View>
 
+
+      </View>
           
         )
       }
