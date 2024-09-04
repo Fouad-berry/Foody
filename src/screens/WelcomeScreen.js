@@ -34,7 +34,7 @@ export default function WelcomeScreen() {
           style={[tw`bg-white/20 rounded-full`, { padding: hp(5) }]}
         >
           <Image
-            source={require('../../assets/images/foodyhd.png')}
+            source={require('../../assets/images/foody.png')}
             style={{ width: hp(20), height: hp(20) }}
           />
         </View>

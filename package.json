@@ -47,7 +47,8 @@
     "react-native-webview": "^13.8.6",
     "react-native-youtube-iframe": "^2.3.0",
     "tailwindcss-react-native": "^1.7.10",
-    "twrnc": "^4.5.1"
+    "twrnc": "^4.5.1",
+    "expo-updates": "~0.25.24"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
