@@ -35,6 +35,30 @@ npm run reset-project
 
 This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
+### Deploy the app on expo using eas 
+
+### To install eas-cli
+
+```bash
+npm install -g eas-cli
+```
+### To login to your eas account
+
+```bash
+eas login
+```
+
+### To init the project
+
+```bash
+eas init
+```
+### To update the project 
+```bash
+eas upade
+```
+
+
 ## Learn more
 
 To learn more about developing your project with Expo, look at the following resources:
