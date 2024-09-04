@@ -42,7 +42,7 @@ const RecipeCard = ({item, index, navigation})=>{
     return(
         <Animated.View entering={FadeInDown.delay(index*100).duration(600).springify().damping(12)}>
             <Pressable
-                style={[tw`flex justify-center mb-4 space-y-1`, { width: '100%', paddingLeft: isEven? 0:8, paddingRight: isEven?8:0}]}
+                style={[tw`flex justify-center mb-4 `, { width: '100%', paddingLeft: isEven? 0:8, paddingRight: isEven?8:0}]}
                 onPress={()=> navigation.navigate('RecipeDetail', {...item})}
             >
 {/*                 <Image

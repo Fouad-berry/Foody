@@ -63,7 +63,7 @@ const getYoutubevideoId = url=>{
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{paddingBottom: 30}}
     >
-      <StatusBar style={"light"} />
+      <StatusBar style="light" />
       <View style={tw`flex-row justify-center`}>
         <CachedImage
             uri={item.strMealThumb}
@@ -85,7 +85,7 @@ const getYoutubevideoId = url=>{
         loading? (
           <Loading size="large" style={tw`mt-16`} />
         ):(
-        <View style={tw`px-4 flex justify-between ml-2 pt-8`}>
+        <View style={tw`px-4 flex justify-between pt-8`}>
           <View style={tw`ml-2`}>
             <Text style={[tw`font-bold flex-1 text-neutral-700 mb-2`, { fontSize: hp(3)}]}>
                 {meal?.strMeal}
@@ -148,7 +148,7 @@ const getYoutubevideoId = url=>{
                   <Square3Stack3DIcon size={hp(4)} strokeWidth={2.5} color="#525252" />
               </View>
               <View style={tw`flex items-center py-2 ml-1`}>
-                  <Text style={[tw`font-bold text-neutral-700 mb-5`, { fontSize: hp(2)}]}>
+                  <Text style={[tw`font-bold text-neutral-700`, { fontSize: hp(2)}]}>
                       
                   </Text>
                   <Text style={[tw`font-bold text-neutral-700`, { fontSize: hp(1.3)}]}>

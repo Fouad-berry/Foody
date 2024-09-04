@@ -12,7 +12,7 @@ export default function Categories({categories, activeCategory, handleChangeCate
         <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
-            style={tw`space-x-4`}
+            style={tw`mr-3`}
             contentContainerStyle={{paddingHorizontal: 15}}
         >
             {
