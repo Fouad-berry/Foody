@@ -67,6 +67,7 @@ const getYoutubevideoId = url=>{
       <View style={tw`flex-row justify-center`}>
         <CachedImage
             uri={item.strMealThumb}
+            sharedTransitionTag={item.strMeal}
             style={{width: wp(98), height: hp(50), borderRadius: 30, borderBottomLeftRadius: 30, borderBottomRightRadius: 30}}
         />
       </View>
